@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/ persistence http://java.sun.com/xml/ns/persistence/ persistence_1_0.xsd">
+  <persistence-unit name="CivBackend" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+	<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Action</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Advance</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.City</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.CityImprovement</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Government</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Player</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Special</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Terrain</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Tile</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.TileImprovement</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.TradeRoute</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.Unit</class>
+	<class>cz.muni.fi.civ.newohybat.persistence.entities.UnitType</class>
+    <properties>
+      <property name="hibernate.connection.url" value="jdbc:derby:memory:unit-testing-jpa"/>
+      <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
+      <property name="hibernate.connection.username" value="sa"/>
+      <property name="hibernate.connection.password" value="sa"/>
+    </properties>
+  </persistence-unit>
+  <!--  
+  <persistence-unit name="DDTroopsEMF" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>cz.muni.fi.pa165.ddtroops.entities.Hero</class>
+    <class>cz.muni.fi.pa165.ddtroops.entities.Skill</class>
+    <class>cz.muni.fi.pa165.ddtroops.entities.Squad</class>
+    <class>cz.muni.fi.pa165.ddtroops.entities.Race</class>
+    <properties>
+      <property name="hibernate.connection.username" value="pa165"/>
+      <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="hibernate.connection.password" value="pa165"/>
+      <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/pa165"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+    </properties>
+  </persistence-unit>
+  -->
+</persistence>
