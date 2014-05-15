@@ -22,6 +22,6 @@ then following dependency becomes available
 <dependency>
    		<groupId>cz.muni.fi.civ</groupId>
    		<artifactId>civ-game</artifactId>
-   		<version>1.0-SNAPSHOT</version>
+   		<version>...</version>
 </dependency>
 ```
