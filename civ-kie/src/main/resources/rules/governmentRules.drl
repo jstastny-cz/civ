@@ -50,7 +50,7 @@ rule "Despotism Units Support"
 	then
 		$unitsExceeded = Math.max(0,$unitsToCount-$citySize)
 		modify($city){
-			setUnitsSupport((int)($unitsSupport + $unitsExceeded*1))
+			setUnitsSupport((int)($unitsExceeded*1))
 			,setUnitsFoodSupport($unitsSettlers)
 		}
 end
@@ -156,9 +156,8 @@ rule "Monarchy Units Support"
 		)
 		UpdateUnitsSupport( cityId == $cityId)
 	then
-		$unitsSupport = $unitsSupport + (int)($unitsToCount*1);
 		modify($city){
-			setUnitsSupport($unitsSupport)
+			setUnitsSupport((int)($unitsToCount*1))
 			,setUnitsFoodSupport( (int)($unitsSettlers*2) )
 		}
 end
@@ -260,7 +259,7 @@ rule "Communism Units Support"
 		UpdateUnitsSupport( cityId == $cityId)
 	then
 		modify($city){
-			setUnitsSupport($unitsSupport + (int)($unitsToCount*1))
+			setUnitsSupport((int)($unitsToCount*1))
 			,setUnitsFoodSupport((int)($unitsSettlers*2))
 		}
 end
@@ -392,7 +391,7 @@ rule "The Republic Units Support"
 		UpdateUnitsSupport( cityId == $cityId )
 	then
 		modify($city){
-			setUnitsSupport((int)($unitsSupport + (int)($unitsToCount*1)))
+			setUnitsSupport((int)($unitsToCount*1))
 			,setUnitsFoodSupport((int)($unitsSettlers*2))
 		}
 end
@@ -460,7 +459,7 @@ rule "Democracy Units Support"
 		UpdateUnitsSupport( cityId == $cityId)
 	then
 		modify($city){
-			setUnitsSupport((int)($unitsSupport + (int)($unitsToCount*1)))
+			setUnitsSupport((int)($unitsToCount*1))
 			,setUnitsFoodSupport( (int)($unitsSettlers*2))
 		}
 end
