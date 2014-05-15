@@ -8,6 +8,7 @@ This module serves as game interface.
 
 **requirements:**
 * dependency to civ-persistence
+* dependency to civ-persistence-api
 * dependency to civ-kie
 * Maven 3 or higher
 * JBoss AS 7.1.1.Final installed and JBOSS_HOME set properly
