@@ -72,6 +72,9 @@ end
 declare CityImprovementEvent
 	@role( event )
 end
+declare MoveEvent
+	@role( event )
+end
 declare UpdateCityProduction
 	cityId:Long
 end

@@ -49,7 +49,7 @@ rule "Unit Move Action Cancelled"
 		)
  		$pc:MoveEvent(
 			unitId==$unitId
-		) from entry-point ActionCanceledStream
+		) from entry-point "ActionCanceledStream"
 		$pi:WorkflowProcessInstance(
 			getProcessId()=="cz.muni.fi.civ.newohybat.bpmn.moveUnit"
 			,$processId:id

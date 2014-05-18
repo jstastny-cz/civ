@@ -157,8 +157,8 @@ public abstract class BaseJUnitTest {
 	}
 	@After
 	public void after(){
-//		ksession.halt();
-//		ksession.dispose();
+		ksession.halt();
+		ksession.dispose();
 	}
 
     protected List<String> getFiredRules(List<AfterMatchFiredEvent> events){

@@ -36,11 +36,12 @@ rule "Begin Fight Between Enemy Units On Same Tile"
 	dialect "mvel"
 	no-loop
     when
+        MoveEvent($unitId:unitId) from entry-point "ActionCompletedStream"
         $u1: UnitDTO(
-        	$unitId:id
+        	id==$unitId
         	,$tile1:tile
         	,$ownerId:owner
-        ) @watch(tile)
+        )@watch(!*)
         UnitAlive(
         	unit==$u1
         )
@@ -90,7 +91,6 @@ rule "Process Fight"
 		Fight(
         	$attacker:attacker
         	,$defender:defender
-        	//,$attacker.attackStrength>$defender.defenseStrength
         )
 	then
 		modify($defender){

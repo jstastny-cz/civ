@@ -5,6 +5,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_1" structureRef="cz.muni.fi.civ.newohybat.persistence.facade.dto.UnitDTO"/>
   <bpmn2:itemDefinition id="ItemDefinition_2" structureRef="java.util.ArrayList"/>
   <bpmn2:itemDefinition id="_ItemDefinition_3" structureRef="cz.muni.fi.civ.newohybat.persistence.facade.dto.TileDTO"/>
+  <bpmn2:itemDefinition id="_ItemDefinition_5" structureRef="cz.muni.fi.civ.newohybat.drools.events.MoveEvent"/>
   <bpmn2:signal id="Signal_1" name="cancel"/>
   <bpmn2:process id="cz.muni.fi.civ.newohybat.bpmn.moveUnit" tns:version="1" tns:packageName="cz.muni.fi.civ.newohybat.bpmn" tns:adHoc="false" name="moveUnit" isExecutable="true" processType="Private">
     <bpmn2:extensionElements>
@@ -12,6 +13,7 @@
       <tns:import name="java.util.ArrayList"/>
       <tns:global identifier="movementTimeUnit" type="Integer"/>
       <tns:import name="cz.muni.fi.civ.newohybat.persistence.facade.dto.TileDTO"/>
+      <tns:import name="cz.muni.fi.civ.newohybat.drools.events.MoveEvent"/>
     </bpmn2:extensionElements>
     <bpmn2:property id="timer-delay" itemSubjectRef="_String"/>
     <bpmn2:property id="step" itemSubjectRef="_Integer"/>
@@ -30,8 +32,8 @@
     </bpmn2:startEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" name="" sourceRef="StartEvent_1" targetRef="ParallelGateway_1"/>
     <bpmn2:inclusiveGateway id="InclusiveGateway_1" name="" gatewayDirection="Converging">
-      <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
     </bpmn2:inclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_5" tns:priority="1" name="" sourceRef="InclusiveGateway_1" targetRef="ExclusiveGateway_1"/>
@@ -76,7 +78,8 @@ kcontext.setVariable(&quot;timer-delay&quot;,delay);&#xD;
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
       <bpmn2:script>unit.setCurrentAction(null);&#xD;
-unit.setTargetTile(null);</bpmn2:script>
+unit.setTargetTile(null);
+kcontext.getKnowledgeRuntime().getEntryPoint(&quot;ActionCompletedStream&quot;).insert(new MoveEvent(unit.getId()));</bpmn2:script>
     </bpmn2:scriptTask>
     <bpmn2:sequenceFlow id="SequenceFlow_8" tns:priority="1" name="" sourceRef="ScriptTask_3" targetRef="EndEvent_1"/>
     <bpmn2:endEvent id="EndEvent_1" name="">

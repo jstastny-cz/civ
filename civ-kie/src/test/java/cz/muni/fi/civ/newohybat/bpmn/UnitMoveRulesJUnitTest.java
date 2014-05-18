@@ -3,9 +3,11 @@ package cz.muni.fi.civ.newohybat.bpmn;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.drools.core.event.DebugProcessEventListener;
 import org.junit.Assert;
 import org.junit.Test;
 import org.kie.api.event.rule.DebugAgendaEventListener;
+import org.kie.api.event.rule.DebugRuleRuntimeEventListener;
 import org.kie.api.runtime.rule.FactHandle;
 
 import cz.muni.fi.civ.newohybat.drools.events.MoveEvent;
@@ -149,15 +151,18 @@ public class UnitMoveRulesJUnitTest extends BaseJUnitTest {
 	}
 	@Test
     public void testPhalanxMoveOnTileWithOpposition(){
-		UnitDTO unit = getUnit(1L,"phalanx",3L);
+		ksession.addEventListener(new DebugAgendaEventListener());
+		ksession.addEventListener(new DebugRuleRuntimeEventListener());
+    	UnitDTO unit = getUnit(1L,"phalanx",3L);
 		unit.setOwner(1L);
 		// unit on target tile
 		UnitDTO unit2 = getUnit(2L,"phalanx", 6L);
 		unit.setOwner(2L);
+		unit.setTile(3L);
 		UnitTypeDTO unitType = getUnitType("phalanx"); 
 		ksession.insert(unitType);
 		
-		ksession.setGlobal("movementTimeUnit", 1);
+		ksession.setGlobal("movementTimeUnit", 0);
 		
 		TileDTO tile1 = getTile(3L, 3L,3L,"plains", new HashSet<String>());
 		TileDTO tile2 = getTile(4L, 3L,4L,"hills", new HashSet<String>());
@@ -168,11 +173,6 @@ public class UnitMoveRulesJUnitTest extends BaseJUnitTest {
 		ksession.insert(tile3);
 		ksession.insert(tile4);
 		ksession.insert(unit2);
-		
-		ksession.fireAllRules();
-		
-		unit.setTile(tile1.getId());
-		unit.setTargetTile(tile4.getId());
 		FactHandle unitHandle = ksession.insert(unit);
 		ksession.fireAllRules();
 		
@@ -180,6 +180,7 @@ public class UnitMoveRulesJUnitTest extends BaseJUnitTest {
 		actions.add("move");
 		unit.setActions(actions);
 		unit.setCurrentAction("move");
+		unit.setTargetTile(tile4.getId());
 		ksession.update(unitHandle, unit);
 		ksession.fireAllRules();
 		try {
