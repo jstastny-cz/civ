@@ -9,7 +9,7 @@ Project defines a kmodule which contains all the definitions of rules and proces
 
 **requirements:**
 
-* dependency to civ-persistence
+* dependency to civ-persistence-api
 
 **usage:**
 
@@ -21,6 +21,6 @@ after that following dependency is available
 <dependency>
     <groupId>cz.muni.fi.civ</groupId>
     <artifactId>civ-kie</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>...</version>
 </dependency>
 ```

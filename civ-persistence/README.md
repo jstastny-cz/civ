@@ -25,6 +25,6 @@ This module is meant to be installed into local Maven repository to be available
 	<dependency>
 		<groupId>cz.muni.fi.civ</groupId>
 		<artifactId>civ-persistence</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>...</version>
 	</dependency>
 ```
