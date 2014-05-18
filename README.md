@@ -1,7 +1,7 @@
 civ
 ===
 
-This project serves as a showcase application of Drools and jBPM. Its main purpose was to find out whether the tools offer sufficient functionality for game-logic implementation of turn-based strategic computer game.
+This project serves as a showcase application of Drools 6.0 and jBPM 6.0. Its main purpose was to find out whether the tools offer sufficient functionality for game-logic implementation of turn-based strategic computer game.
 
 **Modules**
 
