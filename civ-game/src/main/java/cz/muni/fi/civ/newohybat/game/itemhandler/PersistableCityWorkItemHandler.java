@@ -52,7 +52,7 @@ public class PersistableCityWorkItemHandler implements WorkItemHandler {
 		city.setPeopleContent(1);
 		city = helper.persistNewCity(city);
 		ksession.insert(city);
-		// unitService.remove(unit);
+		
 		unit.setCurrentAction(null);
 		Map<String,Object> results = new HashMap<String, Object>();
 		results.put("city", city);

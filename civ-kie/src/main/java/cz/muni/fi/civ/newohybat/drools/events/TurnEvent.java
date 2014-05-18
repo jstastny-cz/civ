@@ -1,7 +1,11 @@
 package cz.muni.fi.civ.newohybat.drools.events;
 
 import java.io.Serializable;
-
+/**
+ * Event Class to signal events about turns.
+ * @author newohybat
+ *
+ */
 public class TurnEvent implements Serializable{
 	/**
 	 * 

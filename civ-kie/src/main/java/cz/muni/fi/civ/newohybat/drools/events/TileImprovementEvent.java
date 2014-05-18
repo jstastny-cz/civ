@@ -1,7 +1,11 @@
 package cz.muni.fi.civ.newohybat.drools.events;
 
 import java.io.Serializable;
-
+/**
+ * Event Class to signal events about Tile Improvements.
+ * @author newohybat
+ *
+ */
 public class TileImprovementEvent implements Serializable{
 	/**
 	 * 

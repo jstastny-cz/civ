@@ -38,8 +38,8 @@ public class UnitWorkItemHandler implements WorkItemHandler {
 		unit.setDistanceHome(0);
 		unit.setOwner(city.getOwner());
 		unit.setTile(city.getCityCentre());
-		// unitService.create(unit);
-		unit.setId((long)Math.ceil(Math.random()*1000000));	// after preceding line uncomented, delete this one
+		
+		unit.setId((long)Math.ceil(Math.random()*1000000));
 		ksession.insert(unit);
 		city.getHomeUnits().add(unit.getId());
 		city.setCurrentUnit(null);

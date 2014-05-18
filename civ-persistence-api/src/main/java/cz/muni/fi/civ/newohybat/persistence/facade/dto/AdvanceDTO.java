@@ -5,7 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.kie.api.definition.type.PropertyReactive;
-
+/**
+ * Class which represents an advance which can be researched by a player.
+ * @author newohybat
+ *
+ */
 @PropertyReactive
 public class AdvanceDTO implements Serializable{
 	/**

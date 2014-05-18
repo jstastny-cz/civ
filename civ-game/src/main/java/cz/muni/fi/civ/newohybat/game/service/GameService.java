@@ -25,17 +25,27 @@ public interface GameService {
 	 */
 	void insert(Object o);
 	/**
-	 * 
-	 * @param objects
+	 * Method inserts each item from collection as a fact
+	 * @param objects to be inserted
 	 */
 	void insertAll(Collection<? extends Object> objects);
 	
+	/**
+	 * Method used to start the turn regime
+	 */
 	void startGame();
-	
+	/**
+	 * Method used to stop the turn regime
+	 */
 	void stopGame();
-	
+	/**
+	 * Method used to initialize knowledgesession before first use
+	 */
 	void init();
-	
+	/**
+	 * Method used to load knowledgesession when persistence employed
+	 * @param sessionId
+	 */
 	void load(Integer sessionId);
 	/**
 	 * Method getAdvance returns AdvanceDTO object for given ident from working memory.
@@ -44,13 +54,13 @@ public interface GameService {
 	 */
 	AdvanceDTO getAdvance(String ident);
 	/**
-	 * 
+	 * Method returns all AdvanceDTO objects for given identificators.
 	 * @param idents
-	 * @return
+	 * @return collection of AdvanceDTO
 	 */
 	Collection<AdvanceDTO> getAdvances(Collection<String> idents);
 	/**
-	 * 
+	 * Method for getting all AdvanceDTO objects in game.
 	 * @return
 	 */
 	Collection<AdvanceDTO> getAdvances();
@@ -61,13 +71,13 @@ public interface GameService {
 	 */
 	CityDTO getCity(Long id);
 	/**
-	 * 
+	 * Method used to retreive CityDTO objects based on their ids.
 	 * @param ids
 	 * @return
 	 */
 	Collection<CityDTO> getCities(Collection<Long> ids);
 	/**
-	 * 
+	 * Method used to retreive all CityDTO objects.
 	 * @return
 	 */
 	Collection<CityDTO> getCities();
@@ -78,187 +88,218 @@ public interface GameService {
 	 */
 	CityImprovementDTO getCityImprovement(String ident);
 	/**
-	 * 
+	 * Method used to get object based on its identificator.
 	 * @param idents
 	 * @return
 	 */
 	Collection<CityImprovementDTO> getCityImprovements(Collection<String> idents);
 	/**
-	 * 
+	 * Method used to get objects based on their identificators.
 	 * @return
 	 */
 	Collection<CityImprovementDTO> getCityImprovements();
-	
+	/**
+	 * Method used to initiate construction of given CityImprovementDTO in given CityDTO
+	 * @param cityId Long id of the city
+	 * @param impIdent String ident of the improvement
+	 */
 	void cityBeginCityImprovement(Long cityId,String impIdent);
-	
+	/**
+	 * Method used to abort construction of city improvement in a city
+	 * @param cityId Long id of the city
+	 */
 	void cityStopCityImprovement(Long cityId);
-	
+	/**
+	 * Method used to initiate creation of given UnitTypeDTO in given CityDTO
+	 * @param cityId Long id of the city
+	 * @param impIdent String ident of the unit type
+	 */
 	void cityBeginUnit(Long cityId, String unitTypeIdent);
-	
+	/**
+	 * Method used to abort creation of new unit in a city
+	 * @param cityId Long id of the city
+	 */
 	void cityStopUnit(Long cityId);
 	/**
-	 * 
+	 * Method used to get object based on its identificator.
 	 * @param ident
 	 * @return
 	 */
 	GovernmentDTO getGovernment(String ident);
 	/**
-	 * 
+	 * Method used to get objects based on their identificators.
 	 * @param idents
 	 * @return
 	 */
 	Collection<GovernmentDTO> getGovernments(Collection<String> idents);
 	/**
-	 * 
-	 * @return
+	 * Method used to get objects.
+	 * @return Collection<GovernmentDTO>
 	 */
 	Collection<GovernmentDTO> getGovernments();
 	/**
-	 * 
+	 * Method used to get object based on its identificator.
 	 * @param id
-	 * @return
+	 * @return PlayerDTO player
 	 */
 	PlayerDTO getPlayer(Long id);
 	/**
-	 * 
+	 * Method used to get objects based on their identificators.
 	 * @param ids
-	 * @return
+	 * @return Collection<PlayerDTO> players
 	 */
 	Collection<PlayerDTO> getPlayers(Collection<Long> ids);
 	/**
-	 * 
+	 * Method used to retreive all the players.
 	 * @return
 	 */
 	Collection<PlayerDTO> getPlayers();
-	
+	/**
+	 * Method used to initiate advance research for given player.
+	 * @param playerId Long id of the player
+	 * @param advanceIdent String ident of the AdvanceDTO
+	 */
 	void playerBeginAdvance(Long playerId, String advanceIdent);
-	
+	/**
+	 * Method used to abort research for given player.
+	 * @param playerId Long id of the player
+	 */
 	void playerStopAdvance(Long playerId);
-	
+	/**
+	 * Method used to change government for the player.
+	 * @param playerId Long id of the player
+	 * @param governmentId String ident of the AdvanceDTO
+	 */
 	void playerChangeGovernment(Long playerId, String governmentId);
 	/**
-	 * 
-	 * @param ident
-	 * @return
+	 * Method used to get object based on its identificator.
+	 * @param ident String
+	 * @return SpecialDTO
 	 */
 	SpecialDTO getSpecial(String ident);
 	/**
-	 * 
-	 * @param idents
-	 * @return
+	 * Method used to get objects based on their identificators.
+	 * @param idents Collection<String>
+	 * @return Collection<SpecialDTO>
 	 */
 	Collection<SpecialDTO> getSpecials(Collection<String> idents);
 	/**
-	 * 
-	 * @return
+	 * Method used to get all the SpecialDTO objects.
+	 * @return Collection<SpecialDTO>
 	 */
 	Collection<SpecialDTO> getSpecials();
 	/**
-	 * 
-	 * @param ident
-	 * @return
+	 * Method used to get object based on its identificator.
+	 * @param ident String ident
+	 * @return TerrainDTO
 	 */
 	TerrainDTO getTerrain(String ident);
 	/**
-	 * 
-	 * @param idents
-	 * @return
+	 * Method used to get objects based on their identificators.
+	 * @param idents Collection<String>
+	 * @return Collection<TerrainDTO> terrains
 	 */
 	Collection<TerrainDTO> getTerrains(Collection<String> idents);
 	/**
-	 * 
-	 * @return
+	 * Method to retreive all the TerrainDTO objects.
+	 * @return Collection<TerrainDTO> terrains
 	 */
 	Collection<TerrainDTO> getTerrains();
 	
 	/**
-	 * 
-	 * @param id
-	 * @return
+	 * Method used to get object based on its identificator.
+	 * @param id Long id of the tile
+	 * @return TileDTO
 	 */
 	TileDTO getTile(Long id);
 	/**
-	 * 
-	 * @param ids
-	 * @return
+	 * Method used to get objects based on their identificators.
+	 * @param ids Collection<Long>
+	 * @return Collection<TileDTO>
 	 */
 	Collection<TileDTO> getTiles(Collection<Long> ids);
 	/**
-	 * 
+	 * Retreives all the TileDTO objects.
 	 * @return
 	 */
 	Collection<TileDTO> getTiles();
 	/**
-	 * 
-	 * @param coord
-	 * @return
-	 */
-	TileDTO getTileByCoordinate(Coordinate coord);
-	/**
-	 * 
-	 * @param coords
-	 * @return
-	 */
-	Collection<TileDTO> getTilesByCoordinates(Collection<Coordinate> coords);
-	/**
-	 * 
-	 * @param ident
-	 * @return
+	 * Method used to get object based on its identificator.
+	 * @param ident String 
+	 * @return Collection<TileImprovementDTO>
 	 */
 	TileImprovementDTO getTileImprovement(String ident);
 	/**
-	 * 
-	 * @param ident
-	 * @return
+	 * Method used to get objects based on their identificators.
+	 * @param ident Collection<String>
+	 * @return Collection<TileImprovementDTO>
 	 */
 	Collection<TileImprovementDTO> getTileImprovements(Collection<String> ident);
 	/**
-	 * 
+	 * Retreive all the TileImprovementDTO objects.
 	 * @return
 	 */
 	Collection<TileImprovementDTO> getTileImprovements();
 	
 	/**
-	 * 
+	 * Method used to get object based on its identificator.
 	 * @param id
 	 * @return
 	 */
 	UnitDTO getUnit(Long id);
 	/**
-	 * 
+	 * Method used to get objects based on their identificators.
 	 * @param ids
 	 * @return
 	 */
 	Collection<UnitDTO> getUnits(Collection<Long> ids);
 	/**
-	 * 
+	 * Retreives all the UnitDTO objects.
 	 * @return
 	 */
 	Collection<UnitDTO> getUnits();
-	
+	/**
+	 * Initiates given action for given unit.
+	 * @param unitId Long id of the unit
+	 * @param actionIdent String ident of the ActionDTO
+	 */
 	void unitBeginAction(Long unitId, String actionIdent);
-	
+	/**
+	 * Begin move to target for given unit.
+	 * @param id Long id of the unit
+	 * @param actionIdent String ident of the action
+	 * @param targetTile Long id of target
+	 */
 	void unitBeginMove(Long id, String actionIdent, Long targetTile);
-	
+	/**
+	 * Stops current action for given unit.
+	 * @param id
+	 */
 	void unitStopAction(Long id);
-	
+	/**
+	 * Stops current move for given unit.
+	 * @param id
+	 */
 	void unitStopMove(Long id);
-	
+	/**
+	 * Remove unit if is stated as dead.
+	 * @param id
+	 */
 	void removeDeadUnit(Long id);
 	/**
-	 * 
+	 * Method used to get object based on its identificator.
 	 * @param ident
 	 * @return
 	 */
 	UnitTypeDTO getUnitType(String ident);
 	/**
-	 * 
+	 * Method used to get objects based on their identificators.
 	 * @param idents
 	 * @return
 	 */
 	Collection<UnitTypeDTO> getUnitTypes(Collection<String>idents);
 	/**
-	 * 
+	 * Retreives all the UnitTypeDTO objects.
 	 * @return
 	 */
 	Collection<UnitTypeDTO> getUnitTypes();

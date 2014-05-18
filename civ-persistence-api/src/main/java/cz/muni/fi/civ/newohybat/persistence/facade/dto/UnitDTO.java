@@ -5,6 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.kie.api.definition.type.PropertyReactive;
+/**
+ * Representation of a unit.
+ * @author newohybat
+ *
+ */
 @PropertyReactive
 public class UnitDTO implements Serializable{
 	/**

@@ -2,7 +2,11 @@ package cz.muni.fi.civ.newohybat.persistence.facade.dto;
 
 import java.io.Serializable;
 
-
+/**
+ * Class represents improvements which can be built on a tile.
+ * @author newohybat
+ *
+ */
 public class TileImprovementDTO implements Serializable{
 	/**
 	 * 

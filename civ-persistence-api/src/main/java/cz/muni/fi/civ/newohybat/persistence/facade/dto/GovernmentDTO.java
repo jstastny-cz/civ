@@ -2,7 +2,11 @@ package cz.muni.fi.civ.newohybat.persistence.facade.dto;
 
 import java.io.Serializable;
 
-
+/**
+ * Class represents type of government which can be established by a player.
+ * @author newohybat
+ *
+ */
 public class GovernmentDTO implements Serializable{
 	/**
 	 * 

@@ -1,7 +1,11 @@
 package cz.muni.fi.civ.newohybat.persistence.facade.dto;
 
 import java.io.Serializable;
-
+/**
+ * Representation of a trade route
+ * @author newohybat
+ *
+ */
 public class TradeRouteDTO implements Serializable{
 	/**
 	 * 

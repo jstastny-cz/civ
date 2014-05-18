@@ -6,6 +6,11 @@ import java.util.Set;
 
 import org.kie.api.definition.type.PropertyReactive;
 
+/**
+ * Representation of a unit type.
+ * @author newohybat
+ *
+ */
 @PropertyReactive
 public class UnitTypeDTO implements Serializable{
 	/**

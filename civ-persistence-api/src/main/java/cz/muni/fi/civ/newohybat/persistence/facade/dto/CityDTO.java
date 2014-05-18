@@ -5,7 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.kie.api.definition.type.PropertyReactive;
-
+/**
+ * Class which represents a city.
+ * @author newohybat
+ *
+ */
 @PropertyReactive
 public class CityDTO implements Serializable{
 	/**

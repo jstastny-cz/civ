@@ -2,7 +2,11 @@ package cz.muni.fi.civ.newohybat.persistence.facade.dto;
 
 import java.io.Serializable;
 
-
+/**
+ * Class represents kinds of special resources that can be found on tiles.
+ * @author newohybat
+ *
+ */
 public class SpecialDTO implements Serializable{
 	/**
 	 * 

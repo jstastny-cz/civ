@@ -5,7 +5,7 @@ import java.util.List;
 /**
  *  Interface BaseDAO serves as general DAO object interface.
  *  Is meant to be extended by unique interface for each DAO object.
- * @author Jan Šťastný
+ * @author newohybat
  */
 
 public interface BaseDAO <T>{

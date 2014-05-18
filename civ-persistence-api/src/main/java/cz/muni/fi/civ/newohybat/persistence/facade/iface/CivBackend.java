@@ -21,28 +21,60 @@ import cz.muni.fi.civ.newohybat.persistence.facade.dto.TileImprovementDTO;
 import cz.muni.fi.civ.newohybat.persistence.facade.dto.TradeRouteDTO;
 import cz.muni.fi.civ.newohybat.persistence.facade.dto.UnitDTO;
 import cz.muni.fi.civ.newohybat.persistence.facade.dto.UnitTypeDTO;
-
+/**
+ * Serves as interface to a component which manages persisting objects.
+ * @author newohybat
+ *
+ */
 public interface CivBackend {
+	/**
+	 * Updates given object in db.
+	 * @param o
+	 */
 	void update(Object o);
-	
-	ActionDTO create(ActionDTO advance);
-	
-	void update(ActionDTO advance);
-	
-	void delete(ActionDTO advance);
-	
-	ActionDTO getActionById(Long id);
-		
+	/**
+	 * Creates a new action in db.
+	 * @param action
+	 * @return
+	 */
+	ActionDTO create(ActionDTO action);
+	/**
+	 * Updates given action in db.
+	 * @param action
+	 */
+	void update(ActionDTO action);
+	/**
+	 * Deletes given action from db.
+	 * @param action
+	 */
+	void delete(ActionDTO action);
+	/**
+	 * Retreives action by its ident.
+	 * @param ident
+	 * @return
+	 */
 	ActionDTO getActionByIdent(String ident);
-	
+	/**
+	 * Lists all the actions.
+	 * @return
+	 */
 	List<ActionDTO> getActions();
-	
+	/**
+	 * create advance object in db.
+	 * @param advance
+	 * @return
+	 */
 	AdvanceDTO create(AdvanceDTO advance);
-	
+	/**
+	 * update given advance in db.
+	 * @param advance
+	 */
 	void update(AdvanceDTO advance);
-	
+	/**
+	 * delete given advance from db.
+	 * @param advance
+	 */
 	void delete(AdvanceDTO advance);
-	
 	AdvanceDTO getAdvanceById(Long id);
 		
 	AdvanceDTO getAdvanceByIdent(String ident);

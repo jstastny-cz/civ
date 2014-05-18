@@ -1,7 +1,11 @@
 package cz.muni.fi.civ.newohybat.persistence.facade.dto;
 
 import java.io.Serializable;
-
+/**
+ * Class which represents action which can be performed by a unit.
+ * @author newohybat
+ *
+ */
 public class ActionDTO implements Serializable{
 	/**
 	 * 

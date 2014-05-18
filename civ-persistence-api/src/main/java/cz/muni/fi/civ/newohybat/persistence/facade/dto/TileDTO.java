@@ -5,6 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.kie.api.definition.type.PropertyReactive;
+/**
+ * Class represents a single tile.
+ * @author newohybat
+ *
+ */
 @PropertyReactive
 public class TileDTO implements Serializable{
 	/**

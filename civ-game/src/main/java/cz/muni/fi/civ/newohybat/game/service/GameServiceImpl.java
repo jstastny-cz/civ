@@ -349,23 +349,6 @@ public class GameServiceImpl implements GameService{
         } 
 		return tiles;
 	}
-	public TileDTO getTileByCoordinate(Coordinate coord) {
-        KieSession ksession = getSession();
-		TileDTO tile= new TileDTO();
-		QueryResults results = ksession.getQueryResults("getTileByPosition", new Object[]{coord.getX(),coord.getY()});
-		for (Iterator<QueryResultsRow> i = results.iterator(); i.hasNext();) { 
-            QueryResultsRow row = (QueryResultsRow)i.next(); 
-            tile = (TileDTO)row.get("$tile"); 
-        } 
-		return tile;
-	}
-	public Collection<TileDTO> getTilesByCoordinates(Collection<Coordinate> coords) {
-		Collection<TileDTO> tiles = new ArrayList<TileDTO>();
-		for(Coordinate c:coords){
-			tiles.add(this.getTileByCoordinate(c));
-		}
-		return tiles;
-	}
 	public TileImprovementDTO getTileImprovement(String ident) {
         KieSession ksession = getSession();
 		TileImprovementDTO tileImp= new TileImprovementDTO();

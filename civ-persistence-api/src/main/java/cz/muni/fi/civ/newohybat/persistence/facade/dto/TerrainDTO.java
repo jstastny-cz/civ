@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-
+/**
+ * Class represents various types of terrain types tile can have.
+ * @author newohybat
+ *
+ */
 public class TerrainDTO implements Serializable{
 	/**
 	 * 

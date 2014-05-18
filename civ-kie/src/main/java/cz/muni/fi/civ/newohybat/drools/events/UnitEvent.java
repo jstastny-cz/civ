@@ -1,7 +1,11 @@
 package cz.muni.fi.civ.newohybat.drools.events;
 
 import java.io.Serializable;
-
+/**
+ * Event Class to signal events about Units.
+ * @author newohybat
+ *
+ */
 public class UnitEvent implements Serializable{
 	/**
 	 * 

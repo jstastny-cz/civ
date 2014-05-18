@@ -3,7 +3,11 @@ package cz.muni.fi.civ.newohybat.persistence.facade.dto;
 import java.io.Serializable;
 
 import org.kie.api.definition.type.PropertyReactive;
-
+/**
+ * Class which represents an improvement which can be built in a city.
+ * @author newohybat
+ *
+ */
 @PropertyReactive
 public class CityImprovementDTO implements Serializable{
 	/**

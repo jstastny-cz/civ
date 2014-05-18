@@ -5,7 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.kie.api.definition.type.PropertyReactive;
-
+/**
+ * Class represents a player.
+ * @author newohybat
+ *
+ */
 @PropertyReactive
 public class PlayerDTO implements Serializable{
 	/**

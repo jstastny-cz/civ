@@ -51,10 +51,10 @@ public class CityWorkItemHandler implements WorkItemHandler {
 		city.setPeopleScientists(0);
 		city.setPeopleTaxmen(0);
 		city.setPeopleUnhappy(0);
-		// cityService.create(city);
-		city.setId((long)Math.ceil(Math.random()*1000000));	// after preceding line uncomented, delete this one
+		
+		city.setId((long)Math.ceil(Math.random()*1000000));	
 		ksession.insert(city);
-		// unitService.remove(unit);
+		
 		unit.setCurrentAction(null);
 		Map<String,Object> results = new HashMap<String, Object>();
 		results.put("city", city);

@@ -25,39 +25,31 @@ public class CivProcessEventListener implements ProcessEventListener{
 	
 	public void beforeVariableChanged(
 			org.kie.api.event.process.ProcessVariableChangedEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	public void beforeProcessStarted(ProcessStartedEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	public void beforeProcessCompleted(
 			org.kie.api.event.process.ProcessCompletedEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	public void beforeNodeTriggered(ProcessNodeTriggeredEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	public void beforeNodeLeft(ProcessNodeLeftEvent arg0) {
-		// TODO Auto-generated method stub
 	}
 	
 	public void afterVariableChanged(
 			org.kie.api.event.process.ProcessVariableChangedEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	public void afterProcessStarted(ProcessStartedEvent event) {
-//		((StatefulKnowledgeSession)event.getKieRuntime()).insert((WorkflowProcessInstance)event.getProcessInstance());
-//        event.getKieRuntime().insert(((ProcessInstance)event.getProcessInstance()));
     }
 	
 	public void afterProcessCompleted(ProcessCompletedEvent event){
@@ -83,12 +75,10 @@ public class CivProcessEventListener implements ProcessEventListener{
     }
 	
 	public void afterNodeTriggered(ProcessNodeTriggeredEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	
 	public void afterNodeLeft(ProcessNodeLeftEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 }
