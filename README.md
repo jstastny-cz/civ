@@ -15,7 +15,8 @@ Whole civ project consists of five modules:
 In this README I won't go into any further details about the modules, please refer to README files of corresponding modules.
 
 **Requirements**
-* JBOSS AS 7.1.1.Final
+* Java 7 with JAVA_HOME system variable set properly
+* JBOSS AS 7.1.1.Final with JBOSS_HOME system variable set properly
 
 For further information on used technologies and their versions please refer to README files of defined modules and their pom files.
 
