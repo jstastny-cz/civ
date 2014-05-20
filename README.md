@@ -25,6 +25,6 @@ For further information on used technologies and their versions please refer to 
 * Upon the afore mentioned modules the civ-rest module builds a RESTful API to demonstrate functionality.
 * The civ-persistence and civ-persistence-api modules define persistent storage for entities of game world.
 
-Recommended usage: run mvn install from civ folder to install all modules and deploy rest application to JBOSS AS. The server have to be already running.
+Recommended usage: run mvn install from civ folder to install all modules and deploy rest application to JBOSS AS. The server has to be already running.
 
 For testing the implementaion through its rest api, refer to file testData.txt placed in root folder of civ-rest module. Further information on how use these data is present in the file itself.
